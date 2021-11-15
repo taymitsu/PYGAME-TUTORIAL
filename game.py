@@ -1,10 +1,17 @@
 #import and initialize pygame
 import pygame
 pygame.init()
+from gameObject import GameObject 
+from random import randint
+from apple import Apple
 
 # Configure the screen
 #dimension (heigh and width) can be entered as TRUPLE or LIST 
 screen = pygame.display.set_mode([500, 500])
+ara = GameObject(120, 300, 'ara.png')
+apple = Apple()
+player = Player()
+
 
 
 # Creat the game loop
@@ -14,8 +21,17 @@ while running:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			running = False
-	#Clear the screen
-	screen.fill((255, 255, 255))
+		elif event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_ESCAPE:
+				running = False
+			elif event.key == pygame.K_LEFT:
+				player.left()
+			elif event.key == pygame.K_RIGHT:
+				player.right()
+			elif event.key == pygame.K_UP:
+				player.up()
+			elif event.key == pygame.K_DOWN:
+				player.down()
     #Draw circle
 	for i in range(0, 9):
 		color = (255, 0, 255)
@@ -26,6 +42,17 @@ while running:
 		pygame.draw.circle(screen, color, position, 75)
 	pygame.display.flip()
 
+screen.fill((255, 255, 255))
+#draw apple
+apple.move()
+apple.render(screen)
+
+# Draw player 
+player.move()
+player.render(screen)
+
+# Update the window
+pygame.display.flip()
 	
 	# Clear the screen
 	#screen.fill((255, 255, 255))

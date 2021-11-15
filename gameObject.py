@@ -1,4 +1,5 @@
 import pygame
+from pygame.sprite import Sprite
 
 class GameObject(pygame.sprite.Sprite):
     def __init__(self, x, y, image):
@@ -11,4 +12,3 @@ class GameObject(pygame.sprite.Sprite):
     def render(self, screen):
         screen.blit(self.surf, (self.x, self.y))
 
-        

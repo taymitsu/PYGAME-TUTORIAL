@@ -2,10 +2,10 @@ from random import randint
 from gameObject import GameObject
 import pygame
 
-class Apple(GameObject):
+class Watermelon(GameObject):
     def __init__(self):
         x = randint(50, 400)
-        super(Apple, self).__init__(x, 0, 'apple.png')
+        super(Watermelon, self).__init__(x, 0, 'watermelon.png')
         self.dy = (randint(0, 200) / 100) + 1
 
     def move(self):

@@ -3,15 +3,16 @@ import pygame
 pygame.init()
 from gameObject import GameObject 
 from random import randint
-from apple import Apple
+from watermelon import Watermelon
+from player import Player
+
 
 # Configure the screen
 #dimension (heigh and width) can be entered as TRUPLE or LIST 
 screen = pygame.display.set_mode([500, 500])
-ara = GameObject(120, 300, 'ara.png')
-apple = Apple()
+watermelon = Watermelon()
 player = Player()
-
+pygame.sprite.Group()
 
 
 # Creat the game loop
@@ -43,9 +44,9 @@ while running:
 	pygame.display.flip()
 
 screen.fill((255, 255, 255))
-#draw apple
-apple.move()
-apple.render(screen)
+#draw watermelon
+watermelon.move()
+watermelon.render(screen)
 
 # Draw player 
 player.move()

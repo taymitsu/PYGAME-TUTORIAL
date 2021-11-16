@@ -2,7 +2,7 @@ from gameObject import GameObject
 
 class Player(GameObject):
   def __init__(self):
-    super(Player, self).__init__(0, 0, 'ara.png')
+    super(Player, self).__init__(0, 0, 'player.png')
     # dx and dy represent the target position for the player
     self.dx = 0
     self.dy = 0

@@ -7,14 +7,16 @@ class Watermelon(GameObject):
     def __init__(self):
         self.positions = [93, 218, 343]
         y = random.choice(self.positions)
-        super(Watermelon, self).__init__(x, 0, 'watermelon.png')
-        self.dy = (randint(0, 200) / 100) + 1
+        super(Watermelon, self).__init__(0, 0, 'watermelon.png')
+        self.dx = (randint(0, 200) / 100) + 1
+        self.dy = 0
+        self.reset()
 
     def move(self):
         self.x += self.dx
         self.y += self.dy
 
-        if self.y > 500:
+        if self.x > 500:
             self.reset()
 
     def reset(self):

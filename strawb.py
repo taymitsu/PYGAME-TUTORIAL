@@ -1,6 +1,6 @@
-from random import randint, random, choice
+from random import randint
+import random
 from gameObject import GameObject
-import pygame
 
 class Strawberry(GameObject):
     def __init__(self):
@@ -14,11 +14,11 @@ class Strawberry(GameObject):
     def move(self):
         self.x += self.dx
         self.y += self.dy
-        # Check the y position of the apple
+        #Check the y position 
         if self.y > 500: 
             self.reset()
 
-    #New Method
+    #New
     def reset(self):
         self.x = random.choice(self.positions)
         self.y = -64

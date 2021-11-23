@@ -7,8 +7,8 @@ from strawb import Strawb
 from player import Player
 
 
-# Configure the screen
-#dimension (heigh and width) can be entered as TRUPLE or LIST 
+# Configure the scr
+#dimension (height and width) can be entered as TRUPLE or LIST 
 screen = pygame.display.set_mode([500, 500])
 clock = pygame.time.Clock()
 
@@ -16,6 +16,11 @@ watermelon = Watermelon()
 strawb = Strawb()
 player = Player()
 
+all_sprites = pygame.sprite.Group()
+
+all_sprites.add(player)
+all_sprites.add(strawb)
+all_sprites.add(watermelon)
 
 # Creat the game loop
 running = True 

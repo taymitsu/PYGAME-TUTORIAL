@@ -1,13 +1,12 @@
 from random import randint
 import random 
 from gameObject import GameObject
-import pygame
 
 class Watermelon(GameObject):
     def __init__(self):
         self.positions = [93, 218, 343]
         y = random.choice(self.positions)
-        super(Watermelon, self).__init__(0, 0, 'watermelon.png')
+        super(Watermelon, self).__init__(0, 0, './images/water.png')
         self.dx = (randint(0, 200) / 100) + 1
         self.dy = 0
         self.reset()
@@ -20,5 +19,5 @@ class Watermelon(GameObject):
             self.reset()
 
     def reset(self):
-        self.y = random.chouce(self.positions)
+        self.y = random.choice(self.positions)
         self.x = -64
